@@ -1,4 +1,4 @@
-# Dominio de Herramientas de Ciberseguridad: Roadmap de 20 Días
+# Dominio de Herramientas de Ciberseguridad
 
 ![Build Status](https://img.shields.io/badge/Status-Complete-success)
 ![Focus](https://img.shields.io/badge/Focus-Offensive_Security-red)
@@ -6,7 +6,7 @@
 ![Format](https://img.shields.io/badge/Format-Bootcamp-orange)
 ![License](https://img.shields.io/badge/License-Open_Source-lightgrey)
 
-Un roadmap intensivo de 20 días centrado en las herramientas de ciberseguridad ofensiva más demandadas en la industria. Este bootcamp fue diseñado combinando investigación propia sobre las necesidades reales del mercado laboral y asistencia de IA para estructurar el plan de acción. Es un proyecto de código abierto: siéntete libre de hacer un fork, usarlo como base para tus estudios y adaptarlo añadiendo lo que consideres necesario para tu desarrollo profesional.
+Este bootcamp fue diseñado por mí, con asistencia de IA, enfocado en cubrir las necesidades técnicas y operativas que, tras investigar el mercado, considero más útiles para el mundo laboral actual en ciberseguridad. Puedes usar este repositorio como base para tus propias investigaciones y añadirle las herramientas o metodologías que creas necesarias.
 
 El objetivo de este repositorio no es la teoría interminable, sino la **memoria muscular**. Está estructurado para que operes directamente desde la terminal y adquieras la fluidez técnica que requiere una auditoría de seguridad real.
 
