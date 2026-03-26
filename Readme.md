@@ -4,8 +4,7 @@
 ![Focus](https://img.shields.io/badge/Focus-Industry_Ready-success)
 ![Format](https://img.shields.io/badge/Format-Practical_Checklist-blue)
 
-## Sobre el proyecto
-
+## Sobre este proyecto
 Este bootcamp fue diseñado por mí, con asistencia de IA, enfocado en cubrir las necesidades técnicas y operativas que, tras investigar el mercado, considero más útiles para el mundo laboral actual en ciberseguridad. Puedes usar este repositorio como base para tus propias investigaciones y añadirle las herramientas o metodologías que creas necesarias.
 
 Utiliza este archivo para marcar tu avance diario en el dominio de las herramientas operativas. Cambia `[ ]` por `[x]` conforme vayas completando las instalaciones, la revisión teórica y las pruebas prácticas en tus entornos aislados.
@@ -39,7 +38,7 @@ Utiliza este archivo para marcar tu avance diario en el dominio de las herramien
 - [ ] Instalar herramienta: `sudo apt install theharvester`
 - [ ] Ver recurso: "OSINT For Hackers" de The Cyber Mentor.
 - [ ] Explorar: Revisar la estructura del mapa en `osintframework.com`.
-- [ ] Práctica: Recopilar correos y subdominios de un objetivo público (ej. una universidad).
+- [ ] Práctica: Recopilar correos y subdominios de un objetivo público.
 - [ ] Documentar el proceso de recolección de información pasiva.
 
 ### Día 5: Escaneo de Vulnerabilidades Automatizado
@@ -88,33 +87,35 @@ Utiliza este archivo para marcar tu avance diario en el dominio de las herramien
 
 ## Fase 3: Explotación y Escalada de Privilegios
 
-### Día 11: Fundamentos de Metasploit Framework
-- [ ] Instalar herramienta: `sudo apt install metasploit-framework`
-- [ ] Ver recurso: Iniciar la "Metasploit Framework Tutorial Series" de HackerSploit.
-- [ ] Práctica: Iniciar la base de datos (`msfdb init`), buscar módulos y revisar opciones de *payloads*.
-- [ ] Documentar la arquitectura y comandos de `msfconsole`.
+### Día 11: Netcat y Fundamentos de Metasploit
+- [ ] Instalar herramientas: Verificar instalación de `netcat` (`nc`) y `metasploit-framework`.
+- [ ] Teoría: Comprender la diferencia entre Reverse Shells y Bind Shells.
+- [ ] Práctica: Poner Netcat a la escucha (`nc -lvnp 4444`) y recibir una conexión local.
+- [ ] Práctica: Iniciar la base de datos de Metasploit (`msfdb init`), buscar módulos y revisar *payloads*.
+- [ ] Documentar la sintaxis de Netcat y comandos de `msfconsole`.
 
 ### Día 12: Explotación Activa con Metasploit
-- [ ] Práctica: Desplegar una máquina virtual vulnerable (ej. Metasploitable 2 o Windows 7 sin parches).
+- [ ] Práctica: Desplegar una máquina virtual vulnerable (ej. Metasploitable 2 o Windows 7).
 - [ ] Práctica: Ejecutar un exploit remoto (ej. MS17-010) y establecer sesión.
-- [ ] Práctica: Interactuar con el sistema a través de Meterpreter (volcado de hashes, migración de procesos).
-- [ ] Documentar acciones de post-explotación.
+- [ ] Práctica: Interactuar con el sistema a través de Meterpreter (volcado de hashes, captura de pantalla).
+- [ ] Documentar comandos esenciales de post-explotación.
 
-### Día 13: Cracking de Contraseñas
-- [ ] Instalar herramientas: `sudo apt install hashcat john`
+### Día 13: Fuerza Bruta Online (Hydra) y Cracking Offline
+- [ ] Instalar herramientas: `sudo apt install hydra hashcat john`
+- [ ] Ver recurso: Buscar tutorial de fuerza bruta con Hydra.
+- [ ] Práctica (Online): Ejecutar Hydra contra un servicio SSH local usando `rockyou.txt` (`hydra -l root -P rockyou.txt ssh://IP`).
 - [ ] Ver recurso: "Password Cracking with Hashcat" de NetworkChuck.
-- [ ] Práctica: Identificar el algoritmo de un hash usando la documentación oficial.
-- [ ] Práctica: Romper hashes volcados del Día 12 usando el diccionario `rockyou.txt`.
-- [ ] Documentar los identificadores de módulos más comunes de Hashcat.
+- [ ] Práctica (Offline): Romper hashes NTLM volcados el Día 12.
+- [ ] Documentar sintaxis de Hydra y módulos de Hashcat.
 
-### Día 14: Escalada de Privilegios Local (Linux)
+### Día 14: Escalada de Privilegios Local (Linux - LinPEAS)
 - [ ] Preparar herramienta: Descargar `linpeas.sh`.
 - [ ] Ver recurso: "Linux Privilege Escalation for Beginners" de The Cyber Mentor.
 - [ ] Práctica: Transferir el script a una máquina Linux comprometida y analizar la salida.
 - [ ] Práctica: Identificar y abusar de permisos SUID o tareas Cron mal configuradas.
 - [ ] Documentar las vías de escalada en la sección correspondiente de apuntes.
 
-### Día 15: Escalada de Privilegios Local (Windows)
+### Día 15: Escalada de Privilegios Local (Windows - WinPEAS)
 - [ ] Preparar herramienta: Descargar `winPEAS.exe`.
 - [ ] Ver recurso: "Windows Privilege Escalation" de The Cyber Mentor.
 - [ ] Práctica: Transferir el ejecutable a una máquina Windows comprometida y analizar resultados.
@@ -125,29 +126,31 @@ Utiliza este archivo para marcar tu avance diario en el dominio de las herramien
 
 ## Fase 4: Entornos Corporativos y Auditoría Práctica
 
-### Día 16: Fundamentos de Active Directory
-- [ ] Ver recurso: "Active Directory Hacking" de The Cyber Mentor.
-- [ ] Teoría: Comprender la función de Domain Controllers, Kerberos y NTLM.
-- [ ] Práctica: Revisar un entorno virtualizado de AD básico.
-- [ ] Documentar la jerarquía y relaciones de confianza corporativas.
+### Día 16: Active Directory y Envenenamiento con Responder
+- [ ] Instalar herramienta: `sudo apt install responder`
+- [ ] Ver recurso: "Active Directory Hacking" de The Cyber Mentor (Conceptos iniciales).
+- [ ] Teoría: Comprender Domain Controllers, Kerberos, NTLM y protocolos de resolución local (LLMNR/NBT-NS).
+- [ ] Práctica: Ejecutar Responder en modo escucha (`sudo responder -I eth0 -dwv`) en una red de prueba.
+- [ ] Documentar cómo capturar hashes NTLMv2 y prepararlos para cracking offline.
 
-### Día 17: Ataques a Active Directory & BloodHound
-- [ ] Instalar herramientas: BloodHound, Neo4j e Impacket.
-- [ ] Ver recurso: Módulos de recopilación de datos de AD de The Cyber Mentor.
+### Día 17: Ataques a Active Directory, NetExec & BloodHound
+- [ ] Instalar herramientas: NetExec (`nxc`), BloodHound y Neo4j.
+- [ ] Ver recurso: Tutoriales operativos de NetExec y mapeo con BloodHound.
+- [ ] Práctica: Ejecutar un Password Spraying controlado en una red local con NetExec.
 - [ ] Práctica: Ingestar datos con SharpHound/BloodHound-python y graficar vectores de ataque.
-- [ ] Documentar técnicas de abuso de configuración (AS-REP Roasting, Kerberoasting).
+- [ ] Documentar la sintaxis de NetExec para ejecución remota y enumeración SMB.
 
 ### Día 18: Redes Internas y Pivoting
 - [ ] Instalar herramientas: Chisel y configurar `proxychains`.
 - [ ] Ver recurso: "Pivoting with Chisel" de IppSec.
 - [ ] Práctica: Establecer un túnel reverso de red para enrutar tráfico hacia un segmento aislado.
-- [ ] Documentar la configuración de proxies SOCKS5.
+- [ ] Documentar la configuración de proxies SOCKS5 en distribuciones Linux.
 
 ### Día 19: Auditoría Práctica (Parte 1) - Reconocimiento y Acceso
 - [ ] Preparación: Iniciar una máquina de prueba integral (Black Box).
-- [ ] Ejecución: Mapeo de puertos exhaustivo y descubrimiento de servicios.
-- [ ] Ejecución: Fuzzing de aplicaciones web expuestas e intercepción de tráfico.
-- [ ] Ejecución: Lograr un punto de apoyo inicial en el sistema (Initial Access).
+- [ ] Ejecución: Mapeo de puertos exhaustivo y descubrimiento de servicios con Nmap.
+- [ ] Ejecución: Fuzzing de aplicaciones web y fuerza bruta online si aplica.
+- [ ] Ejecución: Lograr un punto de apoyo inicial en el sistema usando una Reverse Shell.
 - [ ] Documentar la cadena de ataque paso a paso.
 
 ### Día 20: Auditoría Práctica (Parte 2) - Escalada y Documentación
