@@ -54,10 +54,3 @@ Envenenamiento de protocolos de resolución local, enumeración y explotación d
 ## Inicio Rápido: Automatización del Entorno
 
 Para facilitar la organización y documentación de tus prácticas, este repositorio incluye un script que crea un directorio de estudio con 20 archivos Markdown independientes (uno por día). Estos archivos funcionan como checklists interactivos que puedes integrar en herramientas de gestión de conocimiento.
-
-**Instrucciones de ejecución:**
-
-1. Clona este repositorio en tu entorno local.
-2. Otorga permisos de ejecución al script constructor:
-   ```bash
-   chmod +x init_workspace.sh
