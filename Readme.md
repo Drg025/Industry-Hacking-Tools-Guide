@@ -4,7 +4,7 @@
 ![Focus](https://img.shields.io/badge/Focus-Industry_Ready-success)
 ![Format](https://img.shields.io/badge/Format-Practical_Checklist-blue)
 
-##Sobre el proyecto+}
+##Sobre el proyecto
 
 Este bootcamp fue diseñado por mí, con asistencia de IA, enfocado en cubrir las necesidades técnicas y operativas que, tras investigar el mercado, considero más útiles para el mundo laboral actual en ciberseguridad. Puedes usar este repositorio como base para tus propias investigaciones y añadirle las herramientas o metodologías que creas necesarias.
 
